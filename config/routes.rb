@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :menus, only: :index
+  get 'menus/index'
+  root "menus#index"
 end
