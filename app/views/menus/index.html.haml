@@ -1,0 +1,36 @@
+.wrapper
+  .header
+    .headerLeft
+      今日のごはん
+    .headerForm
+      = form_with class: "searchForm", local: true do |f|
+        = f.text_field :content, class: "searchForm__inputBox fa", placeholder: "\uf002"
+        = f.submit '検索', class: "searchForm__submitButton"
+    .headerRight
+      %ul.headerIcons
+        %li
+          = link_to "#", class: "headerIcons__post" do
+            = icon("fas", "camera-retro")
+        %li
+          = link_to "#", class: "headerIcons__user" do
+            = icon("fas", "house-user")
+
+  .footer
+    .menuList
+      .listTop
+        キーワード検索
+        = link_to "#", class: "listTop__btn" do
+          30分以内
+        = link_to "#", class: "listTop__btn" do
+          冷凍食品
+        = link_to "#", class: "listTop__btn" do
+          お惣菜
+        = link_to "#", class: "listTop__btn" do
+          作り置き
+
+
+      .listBottom
+        = render partial: "menu"
+
+
+
