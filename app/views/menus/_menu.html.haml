@@ -1,11 +1,10 @@
 .listBox
   .boxImage
-    image
+    = image_tag menu.image.url
   .boxInfo
     .boxInfo__name
-      まゆこ さんの今日のごはん
+      = "#{menu.user.name}の今日のごはん"
     .boxInfo__time
-      所要時間： 10 分
+      = "調理時間：#{menu.time}分"
     .boxInfo__point
-      Point
-      メインはスーパーのお惣菜
+      = "Point：#{menu.point}"

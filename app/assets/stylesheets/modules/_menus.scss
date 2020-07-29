@@ -65,6 +65,7 @@
       flex-direction: column;
       align-items: center;
       padding: 10px;
+      overflow: scroll;
       .listTop {
         height: 70px; 
         width: 100%; 
@@ -96,20 +97,38 @@
           justify-content: space-between;
           .boxImage {
             background-color: lemonchiffon;
-            width: 57%;
+            width: 480px;
           }
           .boxInfo {
-            background-color: lemonchiffon;
-            width: 42%;
-            padding: 10px;
+            background-color: rgb(224, 224, 224);
+            width: 360px;
+            padding: 10px 5px;
             &__name {
-
+              background-color: white;
+              color: rgb(80, 79, 79);
+              border-radius: 3px;
+              width: 100%;
+              height: 35px;
+              padding: 5px;
             }
             &__time {
               margin-top: 8px;
+              background-color: white;
+              color: rgb(80, 79, 79);
+              border-radius: 3px;
+              width: 100%;
+              height: 35px;
+              padding: 5px;
             }
             &__point {
               margin-top: 8px;
+              background-color: white;
+              color: rgb(80, 79, 79);
+              border-radius: 3px;
+              width: 100%;
+              height: 35px;
+              padding: 5px;
+              height: 140px;
             }
           }
         }
