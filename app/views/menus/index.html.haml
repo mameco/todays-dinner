@@ -9,10 +9,10 @@
     .headerRight
       %ul.headerIcons
         %li
-          = link_to "#", class: "headerIcons__post" do
+          = link_to new_menu_path, class: "headerIcons__post" do
             = icon("fas", "camera-retro")
         %li
-          = link_to "#", class: "headerIcons__user" do
+          = link_to new_user_session_path, class: "headerIcons__user" do
             = icon("fas", "house-user")
 
   .footer
@@ -30,7 +30,9 @@
 
 
       .listBottom
-        = render partial: "menu"
+        - @menus.each do |menu|
+          = render partial: "menu", locals: { menu: menu }
+
 
 
 
