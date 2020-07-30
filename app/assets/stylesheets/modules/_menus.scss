@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 80px;
+    padding: 0 150px;
     .headerLeft {
       font-size: 30px;
       color: rgb(102, 101, 101);
@@ -34,7 +34,7 @@
 
     }
     .headerRight {
-      .headerIcons {
+      .headerItems {
         display: flex;
         list-style: none;
         font-size: 25px;
@@ -46,6 +46,27 @@
           text-decoration: none;
           color: rgb(124, 118, 118);
           margin-left: 20px;
+        }
+        &__regi {
+          text-decoration: none;
+          color: rgb(100, 98, 98);
+          background-color: rgb(236, 233, 234);
+          padding: 10px;
+          border-radius: 5px;
+        }
+        &__login {
+          text-decoration: none;
+          color: rgb(100, 98, 98);
+          background-color: rgb(236, 233, 234);
+          padding: 10px;
+          border-radius: 5px;
+          margin-left: 20px;
+        }
+        &__regi:hover {
+          background-color: rgb(199, 197, 197);
+        }
+        &__login:hover {
+          background-color: rgb(199, 197, 197);
         }
         
       }
