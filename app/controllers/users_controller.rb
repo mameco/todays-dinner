@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  efore_action :authenticate_user!
 
   
   def edit
@@ -12,6 +12,8 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  
 
   private
   def user_params
