@@ -1,5 +1,9 @@
 class Menu < ApplicationRecord
+  mount_uploaders :images, ImagesUploader
+  serialize :images, JSON
+
   mount_uploader :image, ImageUploader
+
   belongs_to :user
 
   def self.search(search)

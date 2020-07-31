@@ -1,0 +1,20 @@
+.showWrapper
+  = render partial: "header"
+
+  .showTop
+    .showImage
+      = image_tag @menu.image.url
+    .showInfo
+      .showInfo__point
+        = @menu.point
+      .showInfo__time
+        = @menu.time
+      .showInfo__name
+        = @menu.user.name
+  .showCenter
+    = image_tag @menu.images[0].url
+    = image_tag @menu.images[1].url
+  .showBottom
+    = @menu.content
+
+

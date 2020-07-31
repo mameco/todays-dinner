@@ -81,7 +81,7 @@
     justify-content: center;
     .menuList {
       background-color: white;
-      width: 60%;
+      width: 53%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -100,7 +100,7 @@
           background-color: rgb(255, 219, 226);
           text-decoration: none;
           padding: 14px;
-          width: 130px;
+          width: 120px;
           text-align: center;
         }
       }
@@ -111,18 +111,20 @@
         flex-direction: column;
         align-items: center;
         .listBox {
-          height: 250px;
+          height: 300px;
           width: 100%;
           margin-top: 10px;
           display: flex;
           justify-content: space-between;
+          text-decoration: none;
           .boxImage {
             background-color: lemonchiffon;
-            width: 480px;
+            width: 400px;
+            height: 300px;
           }
           .boxInfo {
             background-color: rgb(224, 224, 224);
-            width: 360px;
+            width: 340px;
             padding: 10px 5px;
             &__name {
               background-color: white;
