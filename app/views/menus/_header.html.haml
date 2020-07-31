@@ -1,0 +1,20 @@
+.header
+  .headerLeft
+    今日のごはん
+  .headerForm
+    = form_with(url:  search_menus_path, local: true, method: :get, class: "searchForm") do |f|
+      = f.text_field :keyword, class: "searchForm__inputBox fa", placeholder: "\uf002"
+  .headerRight
+    - if user_signed_in?
+      %ul.headerItems
+        %li
+          = link_to new_menu_path, class: "headerItems__post" do
+            = icon("fas", "camera-retro")
+        %li
+          = link_to edit_user_registration_path, class: "headerItems__user" do
+            = icon("fas", "house-user")
+    - else
+      = link_to new_user_registration_path, class: "headerItems__regi" do
+        ユーザー登録
+      = link_to new_user_session_path, class: "headerItems__login" do
+        ログイン

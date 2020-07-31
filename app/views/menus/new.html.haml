@@ -7,6 +7,9 @@
         = f.label :image, class: "postForm__image" do
           = icon('far', 'plus-square')
           = f.file_field :image, class: "postForm__image__file"
+        = f.label :images, class: "postForm__image" do
+          = icon('far', 'plus-square')
+          = f.file_field :images, multiple: true, class: "postForm__image__file"
         = f.text_field :time, class: "postForm__time", placeholder: "調理時間（分）"
         = f.text_field :point, class: "postForm__point", placeholder: "Point: 例:冷凍食品で作りました！など"
         = f.text_field :content, class: "postForm__content", placeholder: "内容: 使った商品・レシピなど"

@@ -13,7 +13,11 @@ class MenusController < ApplicationController
 
   def create
     @menu = Menu.create(menu_params)
-
+    if @menu.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def search
@@ -24,8 +28,20 @@ class MenusController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def show
+   @menu = Menu.find(params[:id])
+  end
+
   private
   def menu_params
-    params.require(:menu).permit(:image, :content, :point, :time).merge(user_id: current_user.id)
+    params.require(:menu).permit(:content, :point, :time, :image, {images: []}).merge(user_id: current_user.id)
   end
 end
