@@ -1,6 +1,7 @@
 class MenusController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
-  
+  before_action :set_menu, only: [:edit]
+
   def index
     @menus = Menu.includes(:user).order("created_at DESC")
     
@@ -34,7 +35,9 @@ class MenusController < ApplicationController
   def update
     menu = Menu.find(params[:id])
     menu.update(menu_params)
-    redirect_to menu_path(menu.id)
+    if menu.save
+      redirect_to menu_path(menu.id)
+    end
   end
 
   def destroy
@@ -50,5 +53,9 @@ class MenusController < ApplicationController
   private
   def menu_params
     params.require(:menu).permit(:content, :point, :time, :image, {images: []}).merge(user_id: current_user.id)
+  end
+
+  def set_menu
+    @menu = Menu.find(params[:id])
   end
 end

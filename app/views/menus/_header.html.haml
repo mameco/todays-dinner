@@ -3,8 +3,9 @@
     = link_to menus_path, class: "title" do
       今日のごはん
   .headerForm
-    = form_with(url:  search_menus_path, local: true, method: :get, class: "searchForm") do |f|
+    = form_with(url: search_menus_path, local: true, method: :get, class: "searchForm") do |f|
       = f.text_field :keyword, class: "searchForm__inputBox fa", placeholder: "\uf002"
+      = f.submit "検索", class: "searchForm__btn"
   .headerRight
     - if user_signed_in?
       %ul.headerItems

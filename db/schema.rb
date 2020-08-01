@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_31_053634) do
+ActiveRecord::Schema.define(version: 2020_08_01_092746) do
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "point"
-    t.integer "time"
-    t.text "content"
+    t.string "point", null: false
+    t.integer "time", null: false
+    t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.string "images"
-    t.string "image"
+    t.string "image", null: false
     t.index ["user_id"], name: "index_menus_on_user_id"
   end
 
