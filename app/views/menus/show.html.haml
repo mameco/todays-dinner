@@ -1,20 +1,27 @@
-.showWrapper
+.wrapper
   = render partial: "header"
+  .showFooter
+    .showTop
+      .showTopLeft
+        .showTopLeft__image
+          = image_tag @menu.image.url
+        .showTopLeft__point
+          = @menu.point
+      .showTopRight
+        - @menu.images.each do |image|
+          = image_tag(image.url)
+    .showBottom
+      .showBottom__info
+        .showBottom__info__time
+          = "調理時間: #{@menu.time}分"
+        .showBottom__info__name
+          = "投稿者: #{@menu.user.name}"
+        - if user_signed_in? && current_user.id == @menu.user.id
+          = link_to edit_menu_path(@menu.id), method: :get, class: "menuEditBtn"do
+            編集
+          = link_to menu_path(@menu.id), method: :delete, data: { confirm: "投稿を削除します" }, class: "menuDeleteBtn" do
+            削除
+          
 
-  .showTop
-    .showImage
-      = image_tag @menu.image.url
-    .showInfo
-      .showInfo__point
-        = @menu.point
-      .showInfo__time
-        = @menu.time
-      .showInfo__name
-        = @menu.user.name
-  .showCenter
-    = image_tag @menu.images[0].url
-    = image_tag @menu.images[1].url
-  .showBottom
-    = @menu.content
-
-
+      .showBottom__content
+        = @menu.content
