@@ -1,9 +1,8 @@
 class Menu < ApplicationRecord
   mount_uploaders :images, ImagesUploader
   serialize :images, JSON
-
   mount_uploader :image, ImageUploader
-
+  validates :image, :point, :content, :time, presence: true
   belongs_to :user
 
   def self.search(search)

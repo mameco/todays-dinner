@@ -1,0 +1,7 @@
+.wrapper
+  = render partial: "header"
+  .footer
+    .menuList
+      .listBottom
+        - @menus.each do |menu|
+          = render partial: "menu", locals: { menu: menu}
