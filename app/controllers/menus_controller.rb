@@ -1,9 +1,8 @@
 class MenusController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
-
+  before_action :authenticate_user!, except: [:index, :show, :search]
   
   def index
-    @menus = Menu.includes(:user)
+    @menus = Menu.includes(:user).order("created_at DESC")
     
   end
 
@@ -29,11 +28,19 @@ class MenusController < ApplicationController
   end
 
   def edit
-
+    @menu = Menu.find(params[:id])
   end
 
   def update
+    menu = Menu.find(params[:id])
+    menu.update(menu_params)
+    redirect_to menu_path(menu.id)
+  end
 
+  def destroy
+    menu = Menu.find(params[:id])
+    menu.destroy
+    redirect_to root_path
   end
 
   def show

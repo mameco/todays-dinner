@@ -13,8 +13,11 @@
     align-items: center;
     padding: 0 150px;
     .headerLeft {
+      .title {
       font-size: 30px;
       color: rgb(102, 101, 101);
+      text-decoration: none;
+      }
     }
     .headerForm {
       width: 30%;
@@ -125,14 +128,14 @@
           .boxInfo {
             background-color: rgb(224, 224, 224);
             width: 340px;
-            padding: 10px 5px;
+            padding: 10px 9px;
             &__name {
               background-color: white;
               color: rgb(80, 79, 79);
               border-radius: 3px;
               width: 100%;
-              height: 35px;
-              padding: 5px;
+              height: 38px;
+              padding: 5px 10px;
             }
             &__time {
               margin-top: 8px;
@@ -140,8 +143,8 @@
               color: rgb(80, 79, 79);
               border-radius: 3px;
               width: 100%;
-              height: 35px;
-              padding: 5px;
+              height: 38px;
+              padding: 5px 10px;
             }
             &__point {
               margin-top: 8px;
@@ -149,9 +152,8 @@
               color: rgb(80, 79, 79);
               border-radius: 3px;
               width: 100%;
-              height: 35px;
-              padding: 5px;
-              height: 140px;
+              padding: 5px 10px;
+              height: 190px;
             }
           }
         }
