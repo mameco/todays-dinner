@@ -27,6 +27,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
+  config.assets.initialize_on_precompile = false
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
@@ -69,7 +70,6 @@ Rails.application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
-  config.assets.initialize_on_precompile=false
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
