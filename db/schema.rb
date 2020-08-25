@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_08_01_092746) do
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image", null: false
     t.string "point", null: false
     t.integer "time", null: false
     t.text "content", null: false
@@ -20,7 +21,6 @@ ActiveRecord::Schema.define(version: 2020_08_01_092746) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.string "images"
-    t.string "image", null: false
     t.index ["user_id"], name: "index_menus_on_user_id"
   end
 
