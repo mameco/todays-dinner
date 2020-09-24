@@ -1,7 +1,7 @@
 .header
   .headerLeft
     = link_to menus_path, class: "title" do
-      今日のごはん
+      Simple Cooking
   .headerForm
     = form_with(url: search_menus_path, local: true, method: :get, class: "searchForm") do |f|
       = f.text_field :keyword, class: "searchForm__inputBox fa", placeholder: "\uf002"
