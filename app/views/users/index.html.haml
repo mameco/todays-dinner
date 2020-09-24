@@ -1,0 +1,10 @@
+.deviseWrapper
+  .formBox
+    = link_to edit_user_registration_path do
+      アカウント編集
+    %br/
+    = link_to destroy_user_session_path, method: "delete", class: "logoutBottun" do
+      ログアウト
+    %br/
+    = link_to url: '/users', method: :delete, data: {confirm: "本当に削除しますか？" } do
+      アカウント削除

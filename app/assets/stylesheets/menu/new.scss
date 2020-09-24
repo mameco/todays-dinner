@@ -1,11 +1,10 @@
 .postWrapper {
   display: flex;
   justify-content: center;
+  padding: 50px;
   .postList {
     width: 60%;
-    
     .postTop {
-      margin-top: 40px;
       text-align: center;
       color: rgb(248, 163, 177);
       font-size: 30px;
@@ -30,7 +29,6 @@
           }          
         }
         &__time {
-          padding: 10px;
           height: 40px;
           padding: 10px;
           width: 60%;
@@ -38,16 +36,28 @@
           border-bottom: 1px solid lightgray;
           background-color: rgb(243, 241, 241);
           border-radius: 5px;
+          margin-bottom: 20px;
         }
-        &__point {
-          width: 60%;
+        &__keyword {
           padding: 10px;
-          margin-top: 20px;
+          width: 60%;
+          height: 40PX;
+          text-align: center;
           border: none;
           border-bottom: 1px solid lightgray;
           background-color: rgb(243, 241, 241);
           border-radius: 5px;
+          margin:  10px 0 20px 0;
 
+        }
+        &__point {
+          width: 60%;
+          padding: 10px;
+          border: none;
+          border-bottom: 1px solid lightgray;
+          background-color: rgb(243, 241, 241);
+          border-radius: 5px;
+          
         }
         &__content {
           width: 60%;
@@ -68,6 +78,15 @@
           color: rgb(139, 135, 135);
         }
 
+      }
+      .formBottom {
+        display: flex;
+        justify-content: center;
+        margin-top: 35px;
+        .toTopPage {
+          text-decoration: none;
+          color: rgb(102, 101, 101);
+        }
       }
     }
   }

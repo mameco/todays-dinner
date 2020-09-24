@@ -13,7 +13,7 @@
     .showBottom
       .showBottom__info
         .showBottom__info__time
-          = "調理時間: #{@menu.time}分"
+          = "調理時間: #{@menu.cookingTime.time}"
         .showBottom__info__name
           = "投稿者: #{@menu.user.name}"
         - if user_signed_in? && current_user.id == @menu.user.id
@@ -21,7 +21,6 @@
             編集
           = link_to menu_path(@menu.id), method: :delete, data: { confirm: "投稿を削除します" }, class: "menuDeleteBtn" do
             削除
-          
-
       .showBottom__content
+        
         = @menu.content

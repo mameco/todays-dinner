@@ -1,26 +1,21 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name, autofocus: true
-
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-
-.logout
-  = link_to destroy_user_session_path, method: "delete", class: "logoutBottun" do
-    ログアウト
-= render "devise/shared/links"
+.newWrapper
+  .formBox
+    %h2.title ログイン
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :email, 'メールアドレス', class: 'inputTitle'
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'inputBox'
+      %br/
+      .field
+        = f.label :password, 'パスワード', class: 'inputTitle'
+        %br/
+        = f.password_field :password, autocomplete: "current-password", class: 'inputBox'
+      -# - if devise_mapping.rememberable?
+      -#   .field
+      -#     = f.check_box :remember_me
+      -#     = f.label :remember_me
+      %br/
+      .actions
+        = f.submit "Log in", class: 'btn'
+    -# = render "devise/shared/links"

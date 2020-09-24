@@ -4,14 +4,14 @@
     .menuList
       .listTop
         キーワード検索
-        = link_to "#", class: "listTop__btn" do
+        = link_to search_menus_path(keyword: "30分以内"), method: :get, class: "listTop__btn" do
           30分以内
-        = link_to "#", class: "listTop__btn" do
+        = link_to search_menus_path(keyword: "冷凍食品"), method: :get, class: "listTop__btn" do
           冷凍食品
-        = link_to "#", class: "listTop__btn" do
-          お惣菜
-        = link_to "#", class: "listTop__btn" do
-          作り置き
+        = link_to search_menus_path(keyword: "レンジ調理"), method: :get, class: "listTop__btn" do
+          レンジ調理
+        = link_to search_menus_path(keyword: "包丁要らず"), method: :get, class: "listTop__btn" do
+          包丁要らず
 
 
       .listBottom

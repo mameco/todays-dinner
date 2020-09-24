@@ -1,7 +1,24 @@
 .wrapper
   = render partial: "header"
-  .footer
-    .menuList
-      .listBottom
-        - @menus.each do |menu|
-          = render partial: "menu", locals: { menu: menu}
+  .search
+    .left
+      .left__keyword
+        = "” #{params[:keyword]} ”"
+    .right
+      - @menus.each do |menu|
+        = link_to menu_path(menu.id), method: :get, class: "link" do
+          %span.content
+            = image_tag menu.image_url
+            .content__time
+              = menu.cookingTime.time
+            .content__keywords
+              - menu.keywords.each do |keyword|
+                .keyword
+                  = keyword.word
+            .content__user
+              = menu.user.name
+            .content__point
+              - if menu.point.length >= 18
+                = "#{menu.point.first(18)}..."
+              - else
+                = menu.point

@@ -2,11 +2,16 @@
   .boxImage
     = image_tag menu.image.url
   .boxInfo
-    .boxInfo__name
-      = "#{menu.user.name}の今日のごはん"
-    .boxInfo__time
-      = "調理時間：#{menu.time}分"
+    .keywords
+      - menu.keywords.each do |keyword|
+        .keyword
+          = keyword.word
+    .boxInfo__second
+      .boxInfo__second__time
+        = "調理時間：#{menu.cookingTime.time}"
+      .boxInfo__second__user
+        = menu.user.name
     .boxInfo__point
       = "Point"
-      %br
+      %br/
       = menu.point

@@ -1,6 +1,6 @@
 class MenusController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :set_menu, only: [:edit]
+  before_action :set_menu, only: [:edit, :destroy, :show, :update]
 
   def index
     @menus = Menu.includes(:user).order("created_at DESC")
@@ -21,38 +21,40 @@ class MenusController < ApplicationController
   end
 
   def search
-    @menus = Menu.search(params[:keyword])
-    respond_to do |format|
-      format.html
-      format.json
-    end
+    @menus = Menu.search(params[:keyword]).order("created_at DESC").uniq
   end
 
   def edit
-    @menu = Menu.find(params[:id])
+    if @menu.user != current_user
+      redirect_to root_path
+    end
   end
 
   def update
-    menu = Menu.find(params[:id])
-    menu.update(menu_params)
-    if menu.save
+    @menu.update(menu_params)
+    if @menu.save
       redirect_to menu_path(menu.id)
+    else
+      redirect_to edit_menu_path(@menu)
     end
   end
 
   def destroy
-    menu = Menu.find(params[:id])
-    menu.destroy
-    redirect_to root_path
+    user = @menu.user
+    if user != current_user
+      redirect_to root_path
+    else
+      @menu.destroy
+      redirect_to root_path
+    end
   end
 
   def show
-   @menu = Menu.find(params[:id])
   end
 
   private
   def menu_params
-    params.require(:menu).permit(:content, :point, :time, :image, {images: []}).merge(user_id: current_user.id)
+    params.require(:menu).permit(:cookingTime_id, :content, :point, :image, {images: []}, keyword_ids: [], ).merge(user_id: current_user.id)
   end
 
   def set_menu

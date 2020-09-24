@@ -1,41 +1,55 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "Update"
+.editWrapper
+  .formBox
+    %h2.title
+      アカウント編集
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .field
+        = f.label :name, 'ニックネーム', class: 'inputTitle'
+        %br/
+        = f.text_field :name, autofocus: true, autocomplete: "name", class: 'inputBox'
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        %div
+          Currently waiting confirmation for: #{resource.unconfirmed_name}
 
-.logout
-  = link_to destroy_user_session_path, method: "delete", class: "logoutBottun" do
-    ログアウト
+      .field
+        = f.label :email, 'メールアドレス', class: 'inputTitle'
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'inputBox'
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        %div
+          Currently waiting confirmation for: #{resource.unconfirmed_email}
+      .field
+        = f.label :password, 'パスワード', class: 'inputTitle'
+        %br/
+        %span.inputTitle__explanation ※変更しない場合は空白にしてください
+        %br/
+        = f.password_field :password, autocomplete: "new-password", class: 'inputBox'
+        - if @minimum_password_length
+          %br/
+          %em.inputTitle__explanation
+            = @minimum_password_length
+            文字以上
+      .field
+        = f.label :password_confirmation, 'パスワード(確認)', class: 'inputTitle'
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'inputBox'
+      .field
+        = f.label :current_password, '現在のパスワード', class: 'inputTitle'
+        -# %i (we need your current password to confirm your changes)
+        %br/
+        = f.password_field :current_password, autocomplete: "current-password", class: 'inputBox'
+      .actions
+        = f.submit "更新", class: 'btn'
+  .bottomBox
+    %h3 ログアウトしますか？
+    %p
+      #{button_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'}
 
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+
+    %h3 アカウントを削除しますか？
+    %p
+      #{button_to "削除", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, class: 'btn'}
+    -# = link_to destroy_user_session_path, method: "delete", class: "logOut" do
+    -#   ログアウト
+    = link_to "Topページへ戻る", root_path, class: 'backToTop'

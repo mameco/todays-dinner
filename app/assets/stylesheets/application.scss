@@ -1,6 +1,9 @@
 @import "reset";
-@import "modules/menus";
-@import "modules/new";
-@import "modules/show";
+@import "menu/menus";
+@import "menu/new";
+@import "menu/show";
+@import "menu/search";
+@import "devise/new";
+@import "devise/edit";
 @import "font-awesome-sprockets";
 @import "font-awesome";

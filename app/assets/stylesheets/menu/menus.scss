@@ -86,10 +86,10 @@
   }
 
   .footer {
-    height: calc(100% - 75px);
     background-color: rgb(243, 240, 240);
     display: flex;
     justify-content: center;
+    height: calc(100vh - 75px);
     .menuList {
       background-color: white;
       width: 53%;
@@ -116,7 +116,6 @@
         }
       }
       .listBottom {
-        height: calc(100% - 70px);
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -137,22 +136,43 @@
             background-color: rgb(224, 224, 224);
             width: 340px;
             padding: 10px 9px;
-            &__name {
-              background-color: white;
-              color: rgb(80, 79, 79);
-              border-radius: 3px;
-              width: 100%;
-              height: 38px;
-              padding: 5px 10px;
+            .keywords {
+              display: flex;
+              margin-bottom: 7px;
+              height: 35px;
+              .keyword {
+                color: white;
+                background-color: rgb(255, 219, 226);
+                padding: 7px 3px;
+                width: 100px;
+                text-align: center;
+                margin-right: 3px;
+                border-radius: 3px;
+                font-size: 14px;
+              }
             }
-            &__time {
-              margin-top: 8px;
-              background-color: white;
-              color: rgb(80, 79, 79);
-              border-radius: 3px;
+            &__second {
+              display: flex;
               width: 100%;
-              height: 38px;
-              padding: 5px 10px;
+              &__time {
+                margin-top: 4px;
+                background-color: white;
+                color: rgb(80, 79, 79);
+                border-radius: 3px;
+                width: 49%;
+                height: 38px;
+                padding: 5px 10px;
+                margin-right: 2%;
+              }
+              &__user {
+                margin-top: 4px;
+                background-color: white;
+                color: rgb(80, 79, 79);
+                border-radius: 3px;
+                width: 49%;
+                height: 38px;
+                padding: 5px 10px;
+              }
             }
             &__point {
               margin-top: 8px;
@@ -160,8 +180,23 @@
               color: rgb(80, 79, 79);
               border-radius: 3px;
               width: 100%;
-              padding: 5px 10px;
+              padding: 7px 10px;
               height: 190px;
+              &__keywords {
+                display: flex;
+                margin-bottom: 7px;
+                .keyword {
+                  color: white;
+                  background-color: rgb(255, 219, 226);
+                  text-decoration: none;
+                  padding: 3px;
+                  width: 100px;
+                  text-align: center;
+                  margin-right: 3px;
+                  border-radius: 3px;
+
+                }
+              }
             }
           }
         }

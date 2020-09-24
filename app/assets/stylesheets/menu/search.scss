@@ -1,0 +1,98 @@
+.wrapper {
+  .search {
+    width: 100%;
+    display: flex;
+    background-color: rgb(243, 243, 243);
+    height: calc(100vh - 75px);
+    overflow: scroll;
+    .left {
+      width: 25%;
+      padding-left: 100px;
+      &__keyword {
+        position: relative;
+        display: inline-block;
+        margin: 1.5em 0;
+        padding: 0 5px;
+        width: 220px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+        color: #FFF;
+        font-size: 21px;
+        font-weight: bold;
+        background-color: #FFABCE;
+        border-radius: 50%;
+        box-sizing: border-box;
+      }
+      &__keyword:before {
+        content: "";
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        margin-left: -15px;
+        border: 15px solid transparent;
+        border-bottom: 15px solid #FFABCE;
+        z-index: 0;
+      }
+    }
+    .right {
+      width: 75%;
+      padding: 30px 0 30px 70px;
+      .link {
+        text-decoration: none;
+        .content {
+          display: inline-block;
+          margin: 0 50px 30px 0;
+          position: relative;
+          &__time {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            color: white;
+            background-color: rgba(245, 135, 179, 0.726);
+            text-decoration: none;
+            padding: 3px;
+            width: 90px;
+            text-align: center;
+            margin-bottom: 4px;
+            border-radius: 3px;
+          }
+          &__keywords {
+            position: absolute;
+            top: 42px;
+            left: 8px;
+            .keyword {
+              color: white;
+              background-color: rgba(248, 201, 220, 0.726);
+              text-decoration: none;
+              padding: 3px;
+              width: 90px;
+              text-align: center;
+              margin-bottom: 4px;
+              border-radius: 3px;
+            }
+          }
+          &__user {
+            position: absolute;
+            top: 2px;
+            right: 9px;
+            color: rgb(187, 184, 184);
+          }
+          &__point {
+            position: absolute;
+            bottom: 6px;
+            left: 0px;
+            padding: 0 0 1px 8px;
+            width: 100%;
+            color: rgb(240, 236, 236);
+            font-size: 20px;
+            background-color: rgba(155, 155, 155, 0.445);
+          }
+        }
+        }
+        
+      
+
+    }
+  }
+}

@@ -7,7 +7,15 @@
     = icon('far', 'plus-square')
     = f.file_field :images, multiple: true, class: "postForm__image__file"
     %span.postForm__image__title 関連写真(複数可)
-  = f.text_field :time, class: "postForm__time", placeholder: "調理時間（分）"
+  .postForm__keyword
+    = f.collection_check_boxes :keyword_ids, Keyword.all, :id, :word do |i|
+      = i.check_box
+      = i.label
+      &nbsp&nbsp
+  = f.collection_select :cookingTime_id, CookingTime.all, :id, :time, {prompt: '調理時間'}, {class: "postForm__time"}
   = f.text_area :point, class: "postForm__point", placeholder: "Point：", rows: "3"
   = f.text_area :content, class: "postForm__content", placeholder: "内容: 使った商品・レシピなど", rows: "9"
   = f.submit '投稿', class: "postForm__btn", data: { confirm: "投稿します" }
+.formBottom
+  = link_to root_path, class: "toTopPage" do
+    TOPページへ戻る
