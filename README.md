@@ -1,5 +1,6 @@
 # **Simple Cooking**
 **簡単に作れる料理を投稿、閲覧するアプリケーションです。**
+
 **便利な冷凍食品を使った料理、レンジで調理できる料理など ”簡単・時短・便利” な料理。**
 - 料理の投稿
 - 投稿された料理の閲覧
@@ -46,6 +47,7 @@
 ## menusテーブル
 
 |Colimn|Type|Options|
+|------|----|-------|
 |point|string|null: false|
 |content|text||
 |image|string|null: false|
@@ -64,6 +66,7 @@
 ## usersテーブル
 
 |Colimn|Type|Options|
+|------|----|-------|
 |name|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
@@ -77,6 +80,7 @@
 ## cooking_timesテーブル
 
 |Colimn|Type|Options|
+|------|----|-------|
 |time|string||
 
 
@@ -87,6 +91,7 @@
 ## keywordsテーブル
 
 |Colimn|Type|Options|
+|------|----|-------|
 |word|string||
 
 
@@ -98,6 +103,7 @@
 ## menu_keywordsテーブル
 
 |Colimn|Type|Options|
+|------|----|-------|
 |menu_id|references|foreign_key: true|
 |keyword_id|references|foreign_key: true|
 
