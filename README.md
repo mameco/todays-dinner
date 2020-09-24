@@ -9,12 +9,12 @@
 ## Link
 ⇨ https://todays-dinner.herokuapp.com/
 
-##### Test user
-user name: test
-
-email: test@test.com
-
-password: 1111111
+#### Test user
+> user name: test
+>
+> email: test@test.com
+>
+> password: 1111111
 
 ## Background
 私は料理をすることが好きではありません。
@@ -27,6 +27,7 @@ password: 1111111
 
 そんな思いを持っている人は私だけではない、絶対にたくさんいるはず。
 
-という思いから、この[Simple Cooking](https://todays-dinner.herokuapp.com/)を開発しました。
+そのような思いから、この[Simple Cooking](https://todays-dinner.herokuapp.com/)を開発しました。
 
 
+## Demo

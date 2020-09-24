@@ -33,7 +33,7 @@ class MenusController < ApplicationController
   def update
     @menu.update(menu_params)
     if @menu.save
-      redirect_to menu_path(menu.id)
+      redirect_to menu_path(@menu.id)
     else
       redirect_to edit_menu_path(@menu)
     end
