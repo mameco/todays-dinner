@@ -29,5 +29,79 @@
 
 そのような思いから、この[Simple Cooking](https://todays-dinner.herokuapp.com/)を開発しました。
 
-
 ## Demo
+- トップページ　https://gyazo.com/5213ee0cdd3ad6700612ee2faf0287fa
+- 料理詳細ページ　https://gyazo.com/1760980f546626662970556d4030f1a5
+- 検索結果ページ　https://gyazo.com/3d0ced41e9251b94b58d2f9c96ed8de9
+- 新規投稿ページ　https://gyazo.com/0e4ab2d4b38f90124d17cd24b7264393
+- ユーザー登録ページ　https://gyazo.com/472a37acf86b7dcf51ffe303520c8827
+
+## Environment
+- Ruby 2.6.5
+- heroku
+- mySQL 14
+- AWS EC2
+
+
+## menusテーブル
+
+|Colimn|Type|Options|
+|point|string|null: false|
+|content|text||
+|image|string|null: false|
+|images|string||
+|cookingTime_id|references|foreign_key: true|
+|user_id|references|foreign_key: true|
+
+
+### Association
+- belongs_to :user
+- belongs_to :cookingTime
+- has_many :menu_keywords
+- has_many :keywords, through: :menu_keywords
+
+
+## usersテーブル
+
+|Colimn|Type|Options|
+|name|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+|password_confirmation|string|null: false|
+
+
+### Asociation
+- has_many :menus
+
+
+## cooking_timesテーブル
+
+|Colimn|Type|Options|
+|time|string||
+
+
+### Asociation
+- has_many :menus
+
+
+## keywordsテーブル
+
+|Colimn|Type|Options|
+|word|string||
+
+
+### Asociation
+- has_many :menu_keywords
+- has_many :menus, through: :menu_keywords
+
+
+## menu_keywordsテーブル
+
+|Colimn|Type|Options|
+|menu_id|references|foreign_key: true|
+|keyword_id|references|foreign_key: true|
+
+
+### Asociation
+- belongs_to :menu
+- belongs_to :keyword
