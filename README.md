@@ -31,11 +31,21 @@
 そのような思いから、この[Simple Cooking](https://todays-dinner.herokuapp.com/)を開発しました。
 
 ## Demo
-- トップページ　https://gyazo.com/5213ee0cdd3ad6700612ee2faf0287fa
-- 料理詳細ページ　https://gyazo.com/1760980f546626662970556d4030f1a5
-- 検索結果ページ　https://gyazo.com/3d0ced41e9251b94b58d2f9c96ed8de9
-- 新規投稿ページ　https://gyazo.com/0e4ab2d4b38f90124d17cd24b7264393
-- ユーザー登録ページ　https://gyazo.com/472a37acf86b7dcf51ffe303520c8827
+- トップページ
+
+<img width="1380" alt="TOPページ" src="https://user-images.githubusercontent.com/67847966/95278390-0a3a4780-088b-11eb-9c60-d30fe935f28b.png">
+
+- 料理詳細ページ
+
+<img width="1337" alt="詳細ページ" src="https://user-images.githubusercontent.com/67847966/95278411-16260980-088b-11eb-8e36-d49c0e6ce1d7.png">
+
+- 検索結果ページ
+
+<img width="1381" alt="検索結果ページ" src="https://user-images.githubusercontent.com/67847966/95278405-11f9ec00-088b-11eb-92c7-5f561698de9d.png">
+
+- 新規投稿ページ
+
+<img width="1375" alt="投稿ページ" src="https://user-images.githubusercontent.com/67847966/95278410-158d7300-088b-11eb-9fb5-1bd39cbc6d77.png">
 
 ## Environment
 - Ruby 2.6.5
