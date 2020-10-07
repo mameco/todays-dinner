@@ -31,21 +31,7 @@
 そのような思いから、この[Simple Cooking](https://todays-dinner.herokuapp.com/)を開発しました。
 
 ## Demo
-- トップページ
-
-<img width="1380" alt="TOPページ" src="https://user-images.githubusercontent.com/67847966/95278390-0a3a4780-088b-11eb-9c60-d30fe935f28b.png">
-
-- 料理詳細ページ
-
-<img width="1337" alt="詳細ページ" src="https://user-images.githubusercontent.com/67847966/95278411-16260980-088b-11eb-8e36-d49c0e6ce1d7.png">
-
-- 検索結果ページ
-
-<img width="1381" alt="検索結果ページ" src="https://user-images.githubusercontent.com/67847966/95278405-11f9ec00-088b-11eb-92c7-5f561698de9d.png">
-
-- 新規投稿ページ
-
-<img width="1375" alt="投稿ページ" src="https://user-images.githubusercontent.com/67847966/95278410-158d7300-088b-11eb-9fb5-1bd39cbc6d77.png">
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/67847966/95280497-183e9700-0890-11eb-9762-7523bdb2e032.gif)
 
 ## Environment
 - Ruby 2.6.5
