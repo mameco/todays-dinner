@@ -31,7 +31,7 @@
 そのような思いから、この[Simple Cooking](https://todays-dinner.herokuapp.com/)を開発しました。
 
 ## Demo
-![ezgif com-video-to-gif](https://user-images.githubusercontent.com/67847966/95280497-183e9700-0890-11eb-9762-7523bdb2e032.gif)
+![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/67847966/95280778-bfbbc980-0890-11eb-8033-284c9154a795.gif)
 
 ## Environment
 - Ruby 2.6.5
